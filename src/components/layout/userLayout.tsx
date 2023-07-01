@@ -1,19 +1,25 @@
 import { Outlet } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 const UserLayout = () => {
     return <>
         {/* Header */}
-        <header className="bg-red-500">
-            <div className="container mx-auto flex items-center gap-4">
-                <img className="w-[50px]" src="/logo.png" alt="" />
-                <input className="grow rounded" type="text" placeholder="search" />
+        <header className="bg-red-500 h-[80px] flex">
+            <div className="container ml-[230px] flex items-center gap-4 my-auto">
+                <img className="w-[65px] h-[57px]" src="/logo.png" alt="" />
+                <div className='relative '>
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-[92px] ">
+                        <img src="/timkiem.png" alt="" />
+                    </span>
+                    <input className="w-[700px] h-[35px] rounded-lg ml-[80px] bg-white border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search ..." type="text" />
+                </div>
+            <Link to={'/signin'} className='text-white font-bold'>Đăng nhập</Link>|<Link to={'/signup'} className='text-white font-bold'>Đăng kí</Link>
             </div>
         </header>
         {/* Content */}
         <Outlet />
         {/* Footer */}
         <footer className="">
-            <div className="bg-slate-200 text-xs pl-[100px] pt-[50px] pb-[50px]">
+            <div className="bg-slate-200 text-xs pl-[100px] mt-[50px] pt-[50px] pb-[50px]">
                 <div className="bg-slate-200 columns-3">
                     <div className="col">
                         <p>Điện thoại iPhone 13 Điện thoại iPhone 12 Điện thoại iPhone 11</p>

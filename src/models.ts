@@ -1,18 +1,19 @@
 import * as Yup from 'yup'
 
 export interface IProduct {
-    id: string,
+    _id: string,
     name: string,
     price: number,
-    original_price: number,
-    description: string,
-    images: {base_url: string}[],
-    brand: {
-        id: number,
-        name: string,
-        slug: string
-    },
-    specifications: ISpecification[]
+    img:string,
+    // original_price: number,
+    // description: string,
+    // images: {base_url: string}[],
+    // brand: {
+    //     id: number,
+    //     name: string,
+    //     slug: string
+    // },
+    // specifications: ISpecification[]
 }
 
 export interface ISpecification {
@@ -36,7 +37,7 @@ export type SignupForm = Yup.InferType<typeof signupSchema>
 export const signinSchema = Yup.object({
     email: Yup.string().email("Email sai định dạng").required("Trường dữ liệu bắt buộc"),
     password: Yup.string().min(6).required("Trường dữ liệu bắt buộc"),
-    role: Yup.number()
+    // role: Yup.number()
 })
 export type SigninForm = Yup.InferType<typeof signinSchema>
 

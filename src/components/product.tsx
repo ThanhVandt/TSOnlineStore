@@ -6,22 +6,21 @@ type Props = {
 }
 
 const Product = ({data}: Props) => {
-    return <Link to={`product/${data.id}`} className="block">
+    return <Link to={`product/${data._id}`} className="block">
     <img
       alt="Art"
-      src={data?.images[0].base_url}
-      className="h-64 w-full object-cover sm:h-80 lg:h-96"
+      src={data.img}
+      className=""
     />
   
     <h3 className="mt-4 text-lg font-bold text-gray-900 sm:text-xl">
       {data.name}
     </h3>
   
-    <p className="mt-2 max-w-sm text-gray-700">
-      {data.description.substring(0, 40)}
+    <p className="mt-2 max-w-sm font-bold text-red-500">
+      Giá: {data.price} VND
     </p>
   </Link>
-  
 }
 
 export default Product

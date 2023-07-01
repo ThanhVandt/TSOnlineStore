@@ -1,5 +1,5 @@
 import instance from ".";
-import { IProduct, SigninForm, SignupForm, signinSchema, updateForm } from "../models";
+import { IProduct, updateForm } from "../models";
 
 export const getAllUsers = () => {
     const uri = "/users"
@@ -11,10 +11,4 @@ export const getByIdUsers = (id: String) => {
 }
 export const deleteIdUsers = (id:String) =>{
     return instance.delete("/users" + id)
-}
-// export const signupUsers = (data:uploadUsers) =>{
-//     return instance.post("/signup",data)
-// }
-export const signinUsers = (data:SigninForm) =>{
-    return instance.post("/signin",data)
 }
